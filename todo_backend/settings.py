@@ -1,9 +1,9 @@
+import os
+import environ
 from pathlib import Path
 from datetime import timedelta
-import environ
-import os
 
-# Initialise environment variables
+
 env = environ.Env(
     DEBUG=(bool, False),
 )
@@ -16,7 +16,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     #packages
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,7 @@ if DEBUG:
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 50,
+    'PAGE_SIZE': 10,
     'DEFAULT_RENDERER_CLASSES': DEFAULT_RENDERER_CLASSES,
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',

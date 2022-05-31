@@ -1,8 +1,10 @@
-from django.urls import path
+from django import urls
+from rest_framework.routers import DefaultRouter
 
-from .views import (TodoCreateAPIView)
+from .views import TodoModelViewSet
+
+router = DefaultRouter()
+router.register(r'', TodoModelViewSet, basename='todo-viewset')
 
 app_name = 'todo'
-urlpatterns = [
-    path('', TodoCreateAPIView.as_view(), name='create'),
-]
+urlpatterns = [] + router.urls
