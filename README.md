@@ -5,7 +5,7 @@
 Make sure you have python3.8/+ installed.
 
 ```bash
-pip install -r requirements.txt
+pipenv install
 ```
 
 Create a file in the project root folder named .env following the .env.template file
