@@ -4,7 +4,7 @@ from .views import (UserRegistrationRequestCreateAPIView, UserLoginRequestAPIVie
 
 app_name = 'user'
 urlpatterns = [
-    path('register', UserRegistrationRequestCreateAPIView.as_view(), name='token_obtain_pair'),
-    path('login', UserLoginRequestAPIView.as_view(), name="token"),
+    path('register', UserRegistrationRequestCreateAPIView.as_view(), name='register'),
+    path('login', UserLoginRequestAPIView.as_view(), name="login"),
     path('me', UserProfileRetrieveUpdateAPIView.as_view(), name='current-user'),
 ]
